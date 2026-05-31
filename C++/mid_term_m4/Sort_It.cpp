@@ -23,4 +23,4 @@ int main(){
         cout<<A[i]<<" ";
     }
     cout << endl;
-}
+}dddddddd
