@@ -1,6 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+// Input
+// ↓
+// Calculate
+// ↓
+// Compare
+// ↓
+// Print
+
 int main()
 {
     int A;
