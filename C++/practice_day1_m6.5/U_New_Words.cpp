@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void sovle(string S)
+void solve(string S)
 {
     int N = S.size();
 
@@ -32,5 +32,5 @@ int main()
 {
     string S;
     cin >> S;
-    sovle(S);
+    solve(S);
 }
