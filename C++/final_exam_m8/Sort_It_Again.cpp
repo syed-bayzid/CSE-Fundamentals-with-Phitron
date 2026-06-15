@@ -12,9 +12,16 @@ public:
     int eng_marks;
 };
 
+
 bool studentsCmp(Student l, Student r)
 {
-    return l.eng_marks == r.eng_marks ? l.math_marks > r.math_marks : l.eng_marks > r.eng_marks;
+    if (l.eng_marks != r.eng_marks)
+        return l.eng_marks > r.eng_marks; 
+
+    if (l.math_marks != r.math_marks)
+        return l.math_marks > r.math_marks; 
+
+    return l.id < r.id; 
 }
 
 int main()
