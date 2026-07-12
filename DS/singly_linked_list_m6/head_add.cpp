@@ -6,6 +6,7 @@ class Node
 public:
     int value;
     Node *next;
+
     Node(int val)
     {
         value = val;
@@ -13,12 +14,8 @@ public:
     }
 };
 
-void insert_head(Node *&head, int val)
-{
-    Node *new_node = new Node(val);
-    new_node->value = val;
-    new_node->next = head;
-    head = new_node;
+void insert_head(){
+    
 }
 
 void solve()
@@ -31,16 +28,10 @@ void solve()
     b->next = c;
     c->next = NULL;
 
-    insert_head(head, 100);
+    int head_value = head->value;
 
-    while (head != NULL)
-    {
-        cout << head->value << " ";
-        head = head->next;
-    }
+    insert_head();
 }
-
-
 int main()
 {
 
