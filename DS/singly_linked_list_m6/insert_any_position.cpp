@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -14,11 +15,16 @@ public:
     }
 };
 
-void insert_head(Node *&head, int val)
+
+void insert_any_position(Node *&head, int val, int pos)
 {
-    Node *newNode = new Node(val);
-    newNode->next = head;
-    head = newNode;
+  Node *newNode = new Node(val);
+  Node *temp = head;
+  for(int i=1; i<pos ; i++){
+    temp = temp->next;
+  }
+  newNode->next = temp->next;
+  temp->next = newNode;  
 }
 void print(Node *head)
 {
@@ -41,7 +47,7 @@ void solve()
 
     int head_value = head->value;
 
-    insert_head(    head, 100);
+    insert_any_position(head, 1080, 2);
 
     print(head);
 }
