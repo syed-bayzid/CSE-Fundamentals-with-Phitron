@@ -8,7 +8,7 @@ void solve()
     int M;
     cin >> M;
 
-    stack<int> stk;
+list<int> stk;
     int s;
 
     for (int i = 1; i <= N; i++)
@@ -17,7 +17,7 @@ void solve()
         stk.push(s);
     }
 
-    queue<int> que;
+list<int> que;
     int q;
     for (int i = 1; i <= M; i++)
     {
@@ -25,11 +25,7 @@ void solve()
         que.push(q);
     }
 
-    if (N != M)
-    {
-        cout << "NO" << endl;
-        return;
-    }
+
 
     while (!que.empty())
     {
@@ -40,6 +36,10 @@ void solve()
         }
         stk.pop();
         que.pop();
+    }
+    if(!stk.empty() || !que.empty()){
+                cout << "NO" << endl;
+        return;
     }
     cout << "YES" << endl;
 }
