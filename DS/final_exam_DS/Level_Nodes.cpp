@@ -68,50 +68,57 @@ Node *build_tree()
     return root;
 };
 
-void left_boundary(Node* root)
+void solve()
 {
-    if(root == NULL)
-        return;
+    Node *root = build_tree();
 
-    if(root->left == NULL && root->right == NULL)
+    int level;
+    cin >> level;
+
+    if (root == NULL)
     {
-        cout << root->val << " ";
+        cout << "Invalid";
         return;
     }
 
-    if(root->left)
-        left_boundary(root->left);
-    else
-        left_boundary(root->right);
+    queue<pair<Node *, int>> q;
+    q.push({root, 0});
 
-    cout << root->val << " ";
-};
+    bool found = false;
 
-void right_boundary(Node* root)
-{
-    if(root == NULL)
-        return;
-
-    if(root->left == NULL && root->right == NULL)
+    while (!q.empty())
     {
-        cout << root->val << " ";
-        return;
+        pair<Node *, int> parent = q.front();
+        q.pop();
+
+        Node *node = parent.first;
+        int current_level = parent.second;
+
+        if (current_level == level)
+        {
+            cout << node->val << " ";
+            found = true;
+        }
+
+        if (node->left)
+        {
+            q.push({node->left, current_level + 1});
+        }
+
+        if (node->right)
+        {
+            q.push({node->right, current_level + 1});
+        }
     }
 
-    cout << root->val << " ";
-    if(root->right)
-        right_boundary(root->right);
-    else
-        right_boundary(root->left);
-
-};
+    if (found == false)
+    {
+        cout << "Invalid";
+    }
+}
 
 int main()
 {
-    Node *root = build_tree();
-    left_boundary(root->left);
-    cout << root->val << " ";
-    right_boundary(root->right);
 
-    return 0;
+    solve();
 }
