@@ -10,10 +10,10 @@ class Car():
         self.cart.append(item)
         remaining_balance = quantity - price
         print(f"{item} has been added to your cart. Total price: ${price * quantity} for {quantity} units. Remaining balance: ${remaining_balance}")
-
     @staticmethod
     def multiply(a, b):
         print(a * b)
+
 
 # class instance
 pickup = Car("Pickup", 4)
